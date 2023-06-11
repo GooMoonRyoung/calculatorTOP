@@ -1,5 +1,6 @@
-let x = 12
-let y = 15
+let num2 = 12
+let operator = '-'
+let num1 = 15
 
 function add(num1, num2){
     console.log((num1 + num2))
@@ -17,7 +18,17 @@ function divide(num1, num2){
     console.log((num1 / num2))
 }
 
-add(x, y)
-subtract(x, y)
-multiply(x, y)
-divide(x, y)
+function operation(num1, operator, num2){
+    if (operator === "+"){
+        add(num1, num2);
+    } else if (operator === "-"){
+        subtract(num1, num2)
+    } else if (operator === "*"){
+        multiply(num1, num2)
+    } else if (operator === "/"){
+        divide(num1, num2)
+    } else{
+        console.log('this operation is illegal')
+    }
+}
+operation(num1, operator, num2)
