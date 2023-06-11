@@ -1,6 +1,6 @@
-let num2 = 12
-let operator = '-'
-let num1 = 15
+let num1 = 12
+let operator = '/'
+let num2 = 15
 
 function add(num1, num2){
     console.log((num1 + num2))
