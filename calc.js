@@ -7,7 +7,7 @@ const operands = document.querySelectorAll('.operand')
 const operators = document.querySelectorAll('.operator')
 const zero = document.querySelector('.zero')
 const clear = document.querySelector('.clear')
-const display = document.querySelector('#display')
+const display = document.getElementById('display')
 
 let displayVal = display.innerHTML
 
@@ -56,12 +56,13 @@ operands.forEach((operand) => {
 operators.forEach((operator) => {
     operator.addEventListener('click', function(e){
         console.log(operator.innerHTML)
-        if (num1 == null && num2 == null){
+        if (num1 == null){
             num1 = Number(displayVal);
             console.log(num1)
-            display.innerHTML = ''
+            display.innerHTML = ""
+            console.log('pass clear')
         }
-        if (!(num1 == null) && num2 == null){
+        if (!(num1 == null)){
             num2 = Number(display.innerHTML);
             //num1 = calculate(num1, num2, operator.innerHTML)
             num2 = null
@@ -73,5 +74,9 @@ zero.addEventListener('click', function(e){
     console.log('your sister');
 })
 clear.addEventListener('click', function(e){
-    console.log('your brother');
+    clearDisplay();
 })
+
+function clearDisplay() {
+    display.innerHTML = ""
+}
